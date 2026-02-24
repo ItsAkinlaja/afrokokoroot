@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { Event, Program, TeamMember, ContactInfo, ImpactMetric, BlogPost } from './types';
+import dbData from './db.json';
 
 const DB_PATH = path.join(process.cwd(), 'src/lib/db.json');
 
@@ -14,26 +15,18 @@ export interface DatabaseSchema {
 }
 
 export async function getData(): Promise<DatabaseSchema> {
-  try {
-    const data = await fs.readFile(DB_PATH, 'utf-8');
-    return JSON.parse(data) as DatabaseSchema;
-  } catch (error) {
-    console.error("Error reading database:", error);
-    // Fallback to empty structure or re-throw
-    return {
-      events: [],
-      programs: [],
-      team: [],
-      contactInfo: {
-        address: '',
-        email: '',
-        phone: '',
-        socials: {}
-      },
-      impactMetrics: [],
-      blogPosts: []
-    };
+  // In development, read from file system to allow real-time updates
+  if (process.env.NODE_ENV === 'development') {
+    try {
+      const data = await fs.readFile(DB_PATH, 'utf-8');
+      return JSON.parse(data) as DatabaseSchema;
+    } catch (error) {
+      console.warn("Error reading database from file system, falling back to bundled data:", error);
+    }
   }
+  
+  // In production (Netlify), use the bundled data (Read-Only)
+  return dbData as unknown as DatabaseSchema;
 }
 
 export async function updateData(newData: DatabaseSchema) {
