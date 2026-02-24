@@ -1,0 +1,145 @@
+{
+  "events": [
+    {
+      "slug": "world-peace-festival-2025",
+      "title": "World Peace Music & Art Festival 2025",
+      "date": "June 7, 2025",
+      "time": "10:00 AM - 10:00 PM",
+      "location": "Mocking Bird Theatre",
+      "address": "230 Franklin Rd, Building 6, Franklin, TN 37064",
+      "price": "$20 (Indoor) / Free (Outdoor)",
+      "description": "Join us for the 7th annual World Peace Music & Art Festival! Experience a full sensory immersion with Afrokokoroot and other global artists. The outdoor festival is open to the public with free parking.",
+      "highlights": [
+        "Live performance by Afrokokoroot (12-piece Afrobeat ensemble)",
+        "Global food vendors",
+        "Art installations and workshops",
+        "Family-friendly activities"
+      ],
+      "image": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "slug": "lp-launch",
+      "title": "Afrokokoroot LP Launch Party",
+      "date": "February 7, 2025",
+      "time": "7:00 PM",
+      "location": "Afrokokoroot HQ",
+      "address": "101 Broadway, Nashville, TN 37201",
+      "price": "Free Entry",
+      "description": "Get ready for the highly anticipated release of Afrokokoroot's LP Album! Available in Vinyl, Cassette, and CD formats.",
+      "highlights": [
+        "Exclusive listening party",
+        "Meet the band",
+        "Signed merchandise available",
+        "Live DJ set"
+      ],
+      "image": "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop"
+    }
+  ],
+  "programs": [
+    {
+      "slug": "academy",
+      "title": "Afrobeat Music Academy",
+      "description": "Empowering youth with professional music education, focusing on rhythm, brass, and ensemble performance.",
+      "content": "Our academy provides comprehensive music education rooted in the African diaspora traditions.",
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "slug": "wellness",
+      "title": "Wellness Through Rhythm",
+      "description": "Therapeutic drumming workshops designed to improve mental health, reduce stress, and build community bonds.",
+      "content": "Rhythm is a powerful tool for healing. Our workshops are guided by certified music therapists.",
+      "image": "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=2664&auto=format&fit=crop"
+    },
+    {
+      "slug": "education",
+      "title": "Cultural Exchange & Education",
+      "description": "School residencies and community workshops that explore the rich history and impact of African diaspora arts.",
+      "content": "We bring the world to the classroom through interactive performances and lectures.",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"
+    }
+  ],
+  "team": [
+    {
+      "slug": "sunny-dada",
+      "name": "Sunny Dada (SHADDAI)",
+      "role": "Founder & Executive Director",
+      "bio": "Lead vocalist, percussionist, and director. A visionary leader dedicated to preserving Afrobeat traditions.",
+      "image": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      "slug": "jakub-martin",
+      "name": "Jakub Martin",
+      "role": "Director of Music Education",
+      "bio": "Tenor Saxophonist with a passion for teaching and curriculum development.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      "slug": "joshua-cook",
+      "name": "Joshua Cook",
+      "role": "Community Outreach Coordinator",
+      "bio": "Drummer and community organizer, connecting the foundation with local schools and organizations.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+    }
+  ],
+  "contactInfo": {
+    "address": "Nashville, TN, USA",
+    "email": "info@afrokokoroot.com",
+    "phone": "(615) 555-0123",
+    "socials": {
+      "facebook": "https://facebook.com/afrokokoroot",
+      "instagram": "https://instagram.com/afrokokoroot",
+      "twitter": "https://twitter.com/afrokokoroot"
+    }
+  },
+  "impactMetrics": [
+    {
+      "label": "Students Educated",
+      "value": "500+",
+      "description": "Youth empowered through our music academy and school residencies."
+    },
+    {
+      "label": "Community Events",
+      "value": "50+",
+      "description": "Free concerts, workshops, and festivals organized for the public."
+    },
+    {
+      "label": "Artists Supported",
+      "value": "100+",
+      "description": "Local and international artists provided with performance opportunities."
+    },
+    {
+      "label": "Years Active",
+      "value": "7",
+      "description": "Building bridges through music since our inception."
+    }
+  ],
+  "blogPosts": [
+    {
+      "slug": "power-of-rhythm",
+      "title": "The Healing Power of Rhythm",
+      "excerpt": "Discover how drumming circles are helping our community members find balance and mental clarity.",
+      "date": "February 15, 2026",
+      "author": "Sunny Dada",
+      "category": "Wellness",
+      "image": "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=2664&auto=format&fit=crop"
+    },
+    {
+      "slug": "festival-recap-2025",
+      "title": "Recap: World Peace Music Festival 2025",
+      "excerpt": "Highlights from our biggest event of the year, featuring performances from around the globe.",
+      "date": "June 10, 2025",
+      "author": "Joshua Cook",
+      "category": "Events",
+      "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "slug": "music-education-matters",
+      "title": "Why Music Education Matters for Youth",
+      "excerpt": "Exploring the cognitive and social benefits of early music education in underserved communities.",
+      "date": "April 3, 2025",
+      "author": "Jakub Martin",
+      "category": "Education",
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop"
+    }
+  ]
+}

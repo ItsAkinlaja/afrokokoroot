@@ -1,0 +1,17 @@
+import { getContactInfo } from "@/lib/api";
+import SettingsForm from "@/components/admin/SettingsForm";
+
+export default async function SettingsPage() {
+  const contactInfo = await getContactInfo();
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900">Site Settings</h1>
+        <p className="text-slate-500">Manage your organization's contact information and social media links.</p>
+      </div>
+
+      <SettingsForm initialData={contactInfo} />
+    </div>
+  );
+}
