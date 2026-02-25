@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: var(--radius);
+}
+
+:root {
+  /* Vibrant "Rhythm & Roots" Palette */
+  --background: #fffaf5; /* Warm Seashell/Cream - not plain white */
+  --foreground: #2a2a2a; /* Softer, deep charcoal */
+
+  --primary: #f97316; /* Orange-500: Brighter, more energetic */
+  --primary-foreground: #ffffff;
+
+  --secondary: #4338ca; /* Indigo-700: Richer purple/blue */
+  --secondary-foreground: #e0e7ff;
+
+  --accent: #fbbf24; /* Amber-400: Golden sunshine */
+  --accent-foreground: #1c1917;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --muted: #fef3c7; /* Warm Amber-100 */
+  --muted-foreground: #78350f; /* Amber-900 */
+
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+
+  --border: #fed7aa; /* Orange-200 */
+  --input: #fed7aa;
+  --ring: #f97316;
+  
+  --radius: 1rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(67, 56, 202, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+    animation: gradient-x 15s ease infinite;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary to-accent;
+  }
+  
+  .bg-gradient-dark {
+    @apply bg-gradient-to-br from-secondary to-[#1e1b4b];
+  }
+
+  .bg-musical-flow {
+    @apply bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-background to-secondary/20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:shadow-primary/20 border-border/50;
+  }
+  
+  .section-divider-wave {
+    @apply absolute bottom-0 left-0 w-full overflow-hidden leading-[0];
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
