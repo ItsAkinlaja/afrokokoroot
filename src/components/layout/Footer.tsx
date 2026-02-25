@@ -107,7 +107,7 @@ export async function Footer() {
       
       <div className="container relative z-10 mt-16 pt-8 border-t border-white/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-indigo-300/60 font-medium">
         <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
-          <p>&copy; {new Date().getFullYear()} Afrokokoroot Foundation. All rights reserved.</p>
+          <p>&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> Afrokokoroot Foundation. All rights reserved.</p>
         </div>
         <div className="flex gap-8 mt-4 md:mt-0">
           <p>
