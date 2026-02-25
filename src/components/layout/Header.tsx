@@ -130,7 +130,7 @@ export function Header() {
             </Button>
             
             <p className="mt-8 text-center text-slate-400 text-sm">
-              &copy; {new Date().getFullYear()} Afrokokoroot Foundation
+              &copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> Afrokokoroot Foundation
             </p>
           </div>
         </div>
