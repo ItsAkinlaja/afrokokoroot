@@ -9,14 +9,14 @@ export default async function AdminEventsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-slate-800">Events</h1>
           <p className="text-slate-500 mt-1">Manage your upcoming and past events</p>
         </div>
         <Link 
           href="/admin/events/new" 
-          className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors shadow-sm font-medium"
+          className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors shadow-sm font-medium w-full sm:w-auto justify-center"
         >
           <Plus className="h-4 w-4" />
           Add Event
@@ -24,15 +24,16 @@ export default async function AdminEventsPage() {
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-        <table className="w-full text-left">
-          <thead className="bg-slate-50 border-b border-slate-200">
-            <tr>
-              <th className="px-6 py-4 text-sm font-semibold text-slate-600">Event Name</th>
-              <th className="px-6 py-4 text-sm font-semibold text-slate-600">Date & Time</th>
-              <th className="px-6 py-4 text-sm font-semibold text-slate-600">Location</th>
-              <th className="px-6 py-4 text-sm font-semibold text-slate-600 text-right">Actions</th>
-            </tr>
-          </thead>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left min-w-[800px]">
+            <thead className="bg-slate-50 border-b border-slate-200">
+              <tr>
+                <th className="px-6 py-4 text-sm font-semibold text-slate-600">Event Name</th>
+                <th className="px-6 py-4 text-sm font-semibold text-slate-600">Date & Time</th>
+                <th className="px-6 py-4 text-sm font-semibold text-slate-600">Location</th>
+                <th className="px-6 py-4 text-sm font-semibold text-slate-600 text-right">Actions</th>
+              </tr>
+            </thead>
           <tbody className="divide-y divide-slate-100">
             {events.map((event: Event) => (
               <tr key={event.slug} className="hover:bg-slate-50 transition-colors">
@@ -84,6 +85,7 @@ export default async function AdminEventsPage() {
             )}
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   )

@@ -9,12 +9,12 @@ export default async function TeamAdminPage() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-bold text-slate-800">Team</h1>
           <p className="text-slate-500 mt-2">Manage your team members and leadership.</p>
         </div>
-        <Link href="/admin/team/new" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors flex items-center gap-2 font-medium shadow-sm">
+        <Link href="/admin/team/new" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors flex items-center gap-2 font-medium shadow-sm w-full sm:w-auto justify-center">
           <Plus className="h-4 w-4" />
           Add New Member
         </Link>
