@@ -16,7 +16,8 @@ export default function AdminLayout({
 
   // Close sidebar on route change
   useEffect(() => {
-    setIsSidebarOpen(false)
+    const timeout = setTimeout(() => setIsSidebarOpen(false), 0)
+    return () => clearTimeout(timeout)
   }, [pathname])
 
   // If on login page, render without sidebar

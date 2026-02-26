@@ -213,22 +213,26 @@ export default async function AboutPage() {
       </section>
       
       {/* CTA */}
-      <section className="py-24 bg-primary text-primary-foreground text-center relative overflow-hidden rounded-b-[3rem] shadow-xl">
+      <section className="py-24 bg-orange-950 text-white text-center relative overflow-hidden rounded-b-[3rem] shadow-xl">
 
         {/* Background Patterns */}
-        <div className="absolute inset-0 bg-[url('/pattern-grid.svg')] opacity-10 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 opacity-90" />
+        <div className="absolute inset-0 bg-[url('/pattern-grid.svg')] opacity-5 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-800 via-orange-900 to-orange-950 opacity-90" />
+        
+        {/* Decorative Glow */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl" />
         
         <div className="container max-w-3xl relative z-10">
-          <h2 className="text-4xl font-bold tracking-tight mb-6 drop-shadow-sm">Join Our Mission</h2>
-          <p className="text-xl opacity-90 mb-10 font-medium">
+          <h2 className="text-4xl font-bold tracking-tight mb-6 drop-shadow-sm text-white">Join Our Mission</h2>
+          <p className="text-xl text-orange-100/90 mb-10 font-medium">
             Your support helps us keep the rhythm alive. Whether you donate, volunteer, or attend an event, you make a difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" className="shadow-lg hover:scale-105 transition-transform font-bold px-8" asChild>
+            <Button variant="secondary" size="lg" className="shadow-lg hover:scale-105 transition-transform font-bold px-8 bg-white text-orange-900 hover:bg-orange-50" asChild>
               <Link href="/donate">Donate Today</Link>
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-white/40 text-white hover:bg-white hover:text-primary font-bold px-8" asChild>
+            <Button variant="outline" size="lg" className="bg-transparent border-orange-200/30 text-white hover:bg-white/10 hover:text-white font-bold px-8 backdrop-blur-sm" asChild>
               <Link href="/get-involved">Volunteer With Us</Link>
             </Button>
           </div>
