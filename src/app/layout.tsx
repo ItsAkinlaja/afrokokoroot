@@ -3,11 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import dynamic from "next/dynamic";
-const ScrollToTop = dynamic(
-  () => import("@/components/ui/ScrollToTop").then((m) => m.ScrollToTop),
-  { ssr: false }
-);
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
 
