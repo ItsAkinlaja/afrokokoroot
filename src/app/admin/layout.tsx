@@ -1,8 +1,9 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { LayoutDashboard, Calendar, FileText, Settings, LogOut, Music, Users, BarChart3, Globe } from "lucide-react"
+import { LayoutDashboard, Calendar, FileText, Settings, LogOut, Music, Users, BarChart3, Globe, Menu, X } from "lucide-react"
 
 export default function AdminLayout({
   children,
@@ -11,6 +12,12 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname()
   const router = useRouter()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  // Close sidebar on route change
+  useEffect(() => {
+    setIsSidebarOpen(false)
+  }, [pathname])
 
   // If on login page, render without sidebar
   if (pathname === "/admin/login") {
@@ -29,10 +36,39 @@ export default function AdminLayout({
 
   return (
     <div className="flex h-screen bg-slate-100 font-sans">
+      {/* Mobile Header */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-[#1e1b4b] flex items-center justify-between px-4 z-40 shadow-md">
+        <h1 className="text-lg font-bold tracking-tight text-white">Afrokokoroot <span className="text-orange-500">Admin</span></h1>
+        <button 
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="p-2 text-indigo-100 hover:bg-white/10 rounded-lg"
+        >
+          {isSidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className="w-64 bg-[#1e1b4b] text-white flex flex-col shrink-0">
-        <div className="p-6 border-b border-white/10">
-          <h1 className="text-xl font-bold tracking-tight">Afrokokoroot <span className="text-orange-500">Admin</span></h1>
+      <aside className={`
+        fixed inset-y-0 left-0 z-50 w-64 bg-[#1e1b4b] text-white flex flex-col shrink-0 transform transition-transform duration-300 ease-in-out shadow-xl lg:shadow-none
+        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-auto lg:flex
+      `}>
+        <div className="flex items-center justify-between p-6 border-b border-white/10 h-16 lg:h-auto">
+          <h1 className="text-xl font-bold tracking-tight hidden lg:block">Afrokokoroot <span className="text-orange-500">Admin</span></h1>
+          <h1 className="text-xl font-bold tracking-tight lg:hidden">Menu</h1>
+          <button 
+            onClick={() => setIsSidebarOpen(false)}
+            className="lg:hidden p-1 text-indigo-300 hover:text-white"
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
         
         <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
@@ -82,8 +118,8 @@ export default function AdminLayout({
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto bg-slate-50">
-        <div className="p-8 max-w-7xl mx-auto">
+      <main className="flex-1 overflow-y-auto bg-slate-50 pt-16 lg:pt-0">
+        <div className="p-4 lg:p-8 max-w-7xl mx-auto">
           {children}
         </div>
       </main>
