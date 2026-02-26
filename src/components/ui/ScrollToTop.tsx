@@ -7,13 +7,9 @@ import { Button } from "@/components/ui/button";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    
     const toggleVisibility = () => {
-      // Show button when page is scrolled down 300px
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -21,6 +17,7 @@ export function ScrollToTop() {
       }
     };
 
+    toggleVisibility();
     window.addEventListener("scroll", toggleVisibility);
 
     return () => window.removeEventListener("scroll", toggleVisibility);
@@ -32,10 +29,6 @@ export function ScrollToTop() {
       behavior: "smooth",
     });
   };
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <AnimatePresence>
